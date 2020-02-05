@@ -45,7 +45,7 @@ class App extends Component {
     renderNavRoutes() {
         return (
             <>
-                {['/', '/api/folder/:folderId'].map(path => (
+                {['/', '/folders/:folderId'].map(path => (
                     <Route
                         exact
                         key={path}
@@ -53,7 +53,7 @@ class App extends Component {
                         component={NoteListNav}
                     />
                 ))}
-                <Route path="/note/:noteId" component={NotePageNav} />
+                <Route path="/notes/:noteId" component={NotePageNav} />
                 <Route path="/add-folder" component={NotePageNav} />
                 <Route path="/add-note" component={NotePageNav} />
             </>
@@ -63,7 +63,7 @@ class App extends Component {
     renderMainRoutes() {
         return (
             <>
-                {['/', '/folder/:folderId'].map(path => (
+                {['/', '/folders/:folderId'].map(path => (
                     <Route
                         exact
                         key={path}
@@ -71,7 +71,7 @@ class App extends Component {
                         component={NoteListMain}
                     />
                 ))}
-                <Route path="/note/:noteId" component={NotePageMain} />
+                <Route path="/notes/:noteId" component={NotePageMain} />
             </>
         );
     }
@@ -83,6 +83,7 @@ class App extends Component {
             deleteNote: this.handleDeleteNote
         };
         console.log('Notes:', this.state.notes);
+        console.log('Folders:', this.state.folders);
 
         return (
             <ApiContext.Provider value={value}>
