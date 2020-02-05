@@ -82,8 +82,6 @@ class App extends Component {
             folders: this.state.folders,
             deleteNote: this.handleDeleteNote
         };
-        console.log('Notes:', this.state.notes);
-        console.log('Folders:', this.state.folders);
 
         return (
             <ApiContext.Provider value={value}>
