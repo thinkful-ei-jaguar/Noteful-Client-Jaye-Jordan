@@ -44,7 +44,6 @@ export default class Note extends React.Component {
         <h2 className='Note__title'>
           <Link to={`/notes/${id}`}>
             {name}
-            {/* Test Name */}
           </Link>
         </h2>
         <button
