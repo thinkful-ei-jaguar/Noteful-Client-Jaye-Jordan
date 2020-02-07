@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import ValidationError from '../ValidationError'
-import StateContext from '../StateContext'
+// import ValidationError from '../ValidationError'
+import ApiContext from '../ApiContext'
 import './AddNote.css'
 
 
 class AddNote extends Component {
-  static contextType = StateContext;
+  static contextType = ApiContext;
   constructor(props){
     super(props);
     this.state = {
@@ -91,7 +91,7 @@ class AddNote extends Component {
         <div className='form-group'>
           <label htmlFor='note-name'>Name of Note: </label>
           <input type='text' className='note-name' id='note-name' name='noteName'/>
-          {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)}
+          {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}
           <div className='textarea-content'>
             <label htmlFor='note-content'>Note content: </label>
             <textarea type='text' className='note-content' id='note-content' name='noteContent' rows='5' columns='5'/>

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import ValidationError from '../ValidationError'
-import StateContext from '../StateContext'
+// import ValidationError from '../ValidationError'
+import ApiContext from '../ApiContext'
 import './AddFolder.css';
 
 class AddFolder extends Component {
-  static contextType = StateContext;
+  static contextType = ApiContext;
   constructor(props){
     super(props);
     this.state = {
@@ -69,7 +69,7 @@ class AddFolder extends Component {
         <div className='form-group'>
           <label htmlFor='folder-name'>Name of folder:</label>
           <input type='text' className='folder-name' id='folder-name' name='folderName'/>
-          {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)}
+          {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}
         </div>
         <div className="addFolder-button-group">
         <button type="reset" className="addFolder-button" onClick={() => this.props.history.goBack()}>
