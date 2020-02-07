@@ -1,0 +1,70 @@
+.add-note-form{
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.add-note-form > h2 {
+  text-align: center;
+}
+
+.form-group{
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group > label, input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-group > input, textarea {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.form-group > input, select {
+  height: 20px;
+}
+
+.textarea-content{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group > select {
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.addnote-button-group {
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.addnote-button {
+  background-color: #cacaca;
+  border-radius: 30px;
+  border: 0;
+  color: black;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 60px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.addnote-button:hover {
+  cursor: pointer;
+  background-color: #29862e;
+  color: white;
+}
