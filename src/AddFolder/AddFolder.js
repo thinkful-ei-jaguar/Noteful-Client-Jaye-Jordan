@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ValidationError from '../ValidationError'
 import ApiContext from '../ApiContext'
+import config from '../config';
 import './AddFolder.css';
 
 class AddFolder extends Component {
@@ -39,10 +40,10 @@ class AddFolder extends Component {
       }) 
     } else {
       //submit these values to the server here
-      const url = 'http://localhost:9090/folders';
+      const url = `${config.API_ENDPOINT}/folders`;
       const options = {
         method: 'POST',
-        body: JSON.stringify({name: folderName}),
+        body: JSON.stringify({folder_name: folderName}),
         headers: {'Content-Type': 'application/json'}
       }
       fetch(url, options)

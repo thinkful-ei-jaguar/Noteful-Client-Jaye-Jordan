@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ValidationError from '../ValidationError'
 import ApiContext from '../ApiContext'
+import config from '../config';
 import './AddNote.css'
 
 
@@ -52,7 +53,7 @@ class AddNote extends Component {
       })
     } else {
       //submit these values to the server here
-      const url = 'http://localhost:9090/notes'
+      const url = `${config.API_ENDPOINT}/notes`
       const options = {
         method: 'POST',
         body: JSON.stringify({
@@ -102,7 +103,7 @@ class AddNote extends Component {
           </select>
         </div>
         <div className="addnote-button-group">
-        <button type="reset" className="addnote-button" onClick={() => this.props.history.goBack()}>
+        <button type="reset" className="addnote-button" onClick={() => this.props.history.push('/')}>
             Cancel
         </button>
         <button type="submit" className="addnote-button" disabled={this.state.error}>
