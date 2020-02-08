@@ -29,11 +29,18 @@ class AddFolder extends Component {
   }
 
   handleSubmit = (event) => {
+    console.log('handle submit firing')
     event.preventDefault();
+    
 
     //process input value here
     const folderName = event.target.folderName.value;
+    const folder = {
+      folder_name: folderName,
+    }
+
     const error = this.validateFolderName(folderName);
+    this.setState({ error: null })
     if (error){
       this.setState({
         error
@@ -43,7 +50,7 @@ class AddFolder extends Component {
       const url = `${config.API_ENDPOINT}/folders`;
       const options = {
         method: 'POST',
-        body: JSON.stringify({folder_name: folderName}),
+        body: JSON.stringify(folder),
         headers: {'Content-Type': 'application/json'}
       }
       fetch(url, options)
@@ -56,7 +63,7 @@ class AddFolder extends Component {
       .then(folder => {
         this.context.addFolder(folder)
         //where Router comes into play to push the user to the foler id url
-        this.props.history.push(`/folder/${folder.id}`)
+        this.props.history.push(`/folders/${folder.id}`)
       })
       .catch(err => console.log(err.message)) 
     }

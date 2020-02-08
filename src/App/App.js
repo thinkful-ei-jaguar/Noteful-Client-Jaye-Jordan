@@ -102,6 +102,7 @@ class App extends Component {
             addFolder: this.handleAddFolder,
             addNote: this.handleAddNote,
         };
+        console.log(value);
 
         return (
             <ApiContext.Provider value={value}>

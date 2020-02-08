@@ -19,7 +19,7 @@ export default class Note extends React.Component {
     fetch(`${config.API_ENDPOINT}/notes/${noteId}`, {
       method: 'DELETE',
       headers: {
-        'content-type': 'application/json'
+        'Content-type': 'application/json'
       },
     })
       .then(res => {
@@ -31,6 +31,7 @@ export default class Note extends React.Component {
         this.context.deleteNote(noteId)
         // allow parent to perform extra behaviour
         this.props.onDeleteNote(noteId)
+        this.props.history.push(`/`)
       })
       .catch(error => {
         console.error({ error })

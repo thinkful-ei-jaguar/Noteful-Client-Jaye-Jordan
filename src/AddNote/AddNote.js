@@ -74,7 +74,7 @@ class AddNote extends Component {
       .then(note => {
         console.log('Note response from api call:', note);
         this.context.addNote(note)
-        this.props.history.push(`/note/${note.id}`)
+        this.props.history.push(`/notes/${note.id}`)
       })
       .catch(err => console.log(err.message))
     }
