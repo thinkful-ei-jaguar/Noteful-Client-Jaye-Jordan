@@ -38,10 +38,15 @@ class App extends Component {
             });
     }
 
+
     handleDeleteNote = noteId => {
+        console.log('Notes from state:', this.state.notes)
+        const newNotes = this.state.notes.filter(note => note.id !== noteId)
+
         this.setState({
-            notes: this.state.notes.filter(note => note.id !== noteId)
-        });
+            notes: newNotes
+        })
+    
     };
 
     handleAddFolder = (newFolder) => {
