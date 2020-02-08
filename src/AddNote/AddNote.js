@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import ValidationError from '../ValidationError'
+import ValidationError from '../ValidationError'
 import ApiContext from '../ApiContext'
 import './AddNote.css'
 
@@ -56,9 +56,9 @@ class AddNote extends Component {
       const options = {
         method: 'POST',
         body: JSON.stringify({
-          name: noteName, 
+          note_name: noteName, 
           content: noteContent, 
-          folderId: noteFolderId,
+          folder_id: noteFolderId,
           modified: noteModified
         }),
         headers: {'Content-Type' : 'application/json'}
@@ -82,7 +82,7 @@ class AddNote extends Component {
   render(){
     const {folders} = this.context;
     const options = folders.map(folder => {
-      return <option key={folder.id} value={folder.id}>{folder.name}</option>
+      return <option key={folder.id} value={folder.id}>{folder.folder_name}</option>
     })
     
     return(
@@ -91,7 +91,7 @@ class AddNote extends Component {
         <div className='form-group'>
           <label htmlFor='note-name'>Name of Note: </label>
           <input type='text' className='note-name' id='note-name' name='noteName'/>
-          {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}
+          {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)}
           <div className='textarea-content'>
             <label htmlFor='note-content'>Note content: </label>
             <textarea type='text' className='note-content' id='note-content' name='noteContent' rows='5' columns='5'/>
