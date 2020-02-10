@@ -29,7 +29,6 @@ class AddFolder extends Component {
   }
 
   handleSubmit = (event) => {
-    console.log('handle submit firing')
     event.preventDefault();
     
 

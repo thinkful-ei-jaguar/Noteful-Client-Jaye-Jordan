@@ -40,12 +40,11 @@ class App extends Component {
 
 
     handleDeleteNote = noteId => {
-        console.log('Notes from state:', this.state.notes)
-        const newNotes = this.state.notes.filter(note => note.id !== noteId)
-
         this.setState({
-            notes: newNotes
-        })
+            notes: this.state.notes.filter(note => note.id !== noteId)
+          })
+          
+          
     
     };
 
@@ -107,7 +106,6 @@ class App extends Component {
             addFolder: this.handleAddFolder,
             addNote: this.handleAddNote,
         };
-        console.log(value);
 
         return (
             <ApiContext.Provider value={value}>

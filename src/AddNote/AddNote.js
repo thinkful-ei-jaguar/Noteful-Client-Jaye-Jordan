@@ -35,7 +35,6 @@ class AddNote extends Component {
     const noteName = event.target.noteName.value;
     const noteContent = event.target.noteContent.value;
     const noteFolderId = event.target.noteFolder.value;
-    console.log('noteFolderId from handleSubmit:', noteFolderId);
 
     function getCurrentDateTimeMySql() {        
       var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
@@ -72,7 +71,6 @@ class AddNote extends Component {
         return res.json();
       })
       .then(note => {
-        console.log('Note response from api call:', note);
         this.context.addNote(note)
         this.props.history.push(`/notes/${note.id}`)
       })
