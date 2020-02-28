@@ -26,7 +26,7 @@ export default class NotePageNav extends React.Component {
         <CircleButton
           tag='button'
           role='link'
-          onClick={() => this.props.history.goBack()}
+          onClick={() => this.props.history.push('/')}
           className='NotePageNav__back-button'
         >
           <FontAwesomeIcon icon='chevron-left' />
