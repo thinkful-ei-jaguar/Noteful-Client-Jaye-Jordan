@@ -75,7 +75,7 @@ class AddFolder extends Component {
         <h2>Add a Folder</h2>
         <div className='form-group'>
           <label htmlFor='folder-name'>Name of folder:</label>
-          <input type='text' className='folder-name' id='folder-name' name='folderName'/>
+          <input type='text' className='folder-name' id='folder-name' name='folderName' onChange={this.clearError}/>
           {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)}
         </div>
         <div className="addFolder-button-group">
