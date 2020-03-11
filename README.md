@@ -1,3 +1,3 @@
 # Noteful Client
 
-## Deployed Live Link: https://noteful-app-esg0caybl.now.sh/
+## Deployed Live Link: https://noteful-app-ejvwxpgwa.now.sh/
